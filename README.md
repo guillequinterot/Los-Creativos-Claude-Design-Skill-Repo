@@ -5,6 +5,7 @@ Este repositorio contiene las habilidades (skills) y configuraciones personaliza
 ## 🚀 Contenido del Repositorio
 
 - **`claude-project/`**: Configuraciones de proyecto, tokens de diseño y guías de estilo para asegurar la consistencia visual.
+- **`assets/logos/`**: Colección oficial de logos de Los Creativos en formato SVG (versiones principal, MKT, blanco, negro y rojo).
 - **`skills/`**: Definiciones de habilidades específicas para Claude:
   - `loscreativos-claude-design`: Optimizaciones para diseño UI/UX.
   - `loscreativos-claude-ai`: Lógica y prompts avanzados.
