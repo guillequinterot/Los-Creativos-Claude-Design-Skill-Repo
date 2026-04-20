@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LC Design System — Inputs</title>
+  <link rel="stylesheet" href="../ui-kit.css" />
+  <style>
+    body { padding: 40px; background: var(--color-bg); }
+    .ds-section { margin-bottom: 56px; }
+    .ds-label {
+      font-size: var(--fs-overline);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+    .ds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    /* Password toggle */
+    .input-group--password { position: relative; }
+    .input-group--password .input { padding-right: 42px; }
+    .input-toggle {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-text-muted);
+      padding: 0;
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="h2" style="margin-bottom: 8px;">Inputs & Forms</h1>
+  <p class="text-body-md text-muted" style="margin-bottom: 48px;">
+    Altura estándar: 48px. Border-radius: 15px. Focus ring: rgba(255,45,70,0.12).
+  </p>
+
+  <!-- INPUTS ESTÁNDAR -->
+  <div class="ds-section">
+    <p class="ds-label">Inputs estándar</p>
+    <div class="ds-grid">
+
+      <div class="input-wrapper">
+        <label class="input-label" for="i-text">Nombre completo</label>
+        <input id="i-text" class="input" type="text" placeholder="Ej. Fabio Araujo" />
+        <span class="input-hint">Ingresa tu nombre como aparece en tu empresa.</span>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="i-email">Correo electrónico</label>
+        <input id="i-email" class="input" type="email" placeholder="tu@empresa.com" />
+      </div>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="i-phone">Teléfono</label>
+        <input id="i-phone" class="input" type="tel" placeholder="+57 300 000 0000" />
+      </div>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="i-company">Empresa</label>
+        <input id="i-company" class="input" type="text" placeholder="Nombre de tu empresa" />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ESTADOS -->
+  <div class="ds-section">
+    <p class="ds-label">Estados de validación</p>
+    <div class="ds-grid">
+
+      <!-- Default con hint -->
+      <div class="input-wrapper">
+        <label class="input-label" for="i-default">URL del sitio web</label>
+        <input id="i-default" class="input" type="url" value="https://miempresa.com" />
+        <span class="input-hint">Ingresa la URL con https://</span>
+      </div>
+
+      <!-- Error -->
+      <div class="input-wrapper input-wrapper--error">
+        <label class="input-label" for="i-error">Correo electrónico</label>
+        <input id="i-error" class="input" type="email" value="correo-invalido" />
+        <span class="input-hint input-hint--error">
+          ✕ Ingresa un correo válido (ej. tu@empresa.com).
+        </span>
+      </div>
+
+      <!-- Success -->
+      <div class="input-wrapper input-wrapper--success">
+        <label class="input-label" for="i-success">Nombre de la empresa</label>
+        <input id="i-success" class="input" type="text" value="Los Creativos" />
+        <span class="input-hint input-hint--success">
+          ✓ Empresa verificada en nuestro sistema.
+        </span>
+      </div>
+
+      <!-- Disabled -->
+      <div class="input-wrapper">
+        <label class="input-label" for="i-disabled" style="opacity: 0.5;">Plan actual</label>
+        <input id="i-disabled" class="input" type="text" value="Plan Empresarial" disabled />
+        <span class="input-hint">Este campo no es editable.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INPUT CON ICONO -->
+  <div class="ds-section">
+    <p class="ds-label">Con icono prefijo</p>
+    <div class="ds-grid">
+
+      <div class="input-wrapper">
+        <label class="input-label" for="i-search">Buscar servicio</label>
+        <div class="input-group">
+          <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input id="i-search" class="input" type="search" placeholder="SEO, Diseño web, Pauta..." />
+        </div>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="i-email2">Correo</label>
+        <div class="input-group">
+          <svg class="input-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <input id="i-email2" class="input" type="email" placeholder="tu@empresa.com" />
+        </div>
+      </div>
+
+      <!-- Password con toggle -->
+      <div class="input-wrapper">
+        <label class="input-label" for="i-pass">Contraseña</label>
+        <div class="input-group input-group--password">
+          <input id="i-pass" class="input" type="password" value="MiContraseña123" />
+          <button class="input-toggle" type="button" aria-label="Mostrar contraseña">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+        <span class="input-hint">Mínimo 8 caracteres.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SELECT -->
+  <div class="ds-section">
+    <p class="ds-label">Select / Dropdown</p>
+    <div class="ds-grid">
+
+      <div class="input-wrapper">
+        <label class="input-label" for="i-select">Servicio de interés</label>
+        <select id="i-select" class="input">
+          <option value="" disabled selected>Selecciona un servicio</option>
+          <option>SEO Técnico</option>
+          <option>SEO de Contenidos</option>
+          <option>Link Building</option>
+          <option>Auditoría SEO</option>
+          <option>Diseño Web</option>
+          <option>Google Ads</option>
+        </select>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="i-country">País</label>
+        <select id="i-country" class="input">
+          <option value="" disabled selected>Selecciona tu país</option>
+          <option>Colombia</option>
+          <option>México</option>
+          <option>Chile</option>
+          <option>Argentina</option>
+          <option>España</option>
+          <option>USA</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TEXTAREA -->
+  <div class="ds-section">
+    <p class="ds-label">Textarea</p>
+    <div style="max-width: 640px;">
+      <div class="input-wrapper">
+        <label class="input-label" for="i-msg">¿Cuál es tu principal desafío de marketing?</label>
+        <textarea id="i-msg" class="input" rows="5"
+          placeholder="Cuéntanos sobre tu negocio, tus objetivos y los retos que enfrentas actualmente..."></textarea>
+        <span class="input-hint">Mientras más detalles nos des, mejor podemos ayudarte.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKBOX & RADIO -->
+  <div class="ds-section">
+    <p class="ds-label">Checkbox & Radio</p>
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 480px;">
+
+      <label class="checkbox-wrapper">
+        <input type="checkbox" checked />
+        <span class="text-body-sm">Acepto los <a href="#" style="color: var(--color-primary);">Términos y Condiciones</a></span>
+      </label>
+      <label class="checkbox-wrapper">
+        <input type="checkbox" />
+        <span class="text-body-sm">Quiero recibir contenido sobre SEO y marketing digital</span>
+      </label>
+      <label class="checkbox-wrapper">
+        <input type="checkbox" disabled />
+        <span class="text-body-sm" style="opacity: 0.5;">Opción no disponible</span>
+      </label>
+
+      <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 10px;">
+        <label class="radio-wrapper">
+          <input type="radio" name="budget" value="a" checked />
+          <span class="text-body-sm">Menos de $3,000 USD/mes</span>
+        </label>
+        <label class="radio-wrapper">
+          <input type="radio" name="budget" value="b" />
+          <span class="text-body-sm">$3,000 – $8,000 USD/mes</span>
+        </label>
+        <label class="radio-wrapper">
+          <input type="radio" name="budget" value="c" />
+          <span class="text-body-sm">Más de $8,000 USD/mes</span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FORMULARIO COMPLETO -->
+  <div class="ds-section">
+    <p class="ds-label">Formulario de contacto completo</p>
+    <form style="max-width: 520px; display: flex; flex-direction: column; gap: 20px;"
+          onsubmit="return false;">
+
+      <div class="ds-grid" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="input-wrapper">
+          <label class="input-label" for="f-name">Nombre *</label>
+          <input id="f-name" class="input" type="text" placeholder="Tu nombre" required />
+        </div>
+        <div class="input-wrapper">
+          <label class="input-label" for="f-company">Empresa *</label>
+          <input id="f-company" class="input" type="text" placeholder="Tu empresa" required />
+        </div>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="f-email">Correo electrónico *</label>
+        <input id="f-email" class="input" type="email" placeholder="tu@empresa.com" required />
+      </div>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="f-service">Servicio de interés</label>
+        <select id="f-service" class="input">
+          <option value="" disabled selected>Selecciona</option>
+          <option>SEO</option>
+          <option>Diseño Web</option>
+          <option>Google Ads</option>
+          <option>Consultoría</option>
+        </select>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="f-msg">Mensaje</label>
+        <textarea id="f-msg" class="input" rows="4" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+      </div>
+
+      <label class="checkbox-wrapper">
+        <input type="checkbox" required />
+        <span class="text-body-sm">
+          Acepto la <a href="/politica-de-privacidad" style="color: var(--color-primary);">Política de Privacidad</a>
+        </span>
+      </label>
+
+      <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+        SOLICITAR CONSULTORÍA GRATUITA
+      </button>
+
+    </form>
+  </div>
+
+</body>
+</html>

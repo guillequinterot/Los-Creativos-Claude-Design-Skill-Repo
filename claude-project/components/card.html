@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LC Design System — Cards</title>
+  <link rel="stylesheet" href="../ui-kit.css" />
+  <style>
+    body { padding: 40px; background: var(--color-bg); }
+    .ds-section { margin-bottom: 56px; }
+    .ds-label {
+      font-size: var(--fs-overline);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+    .ds-dark-bg {
+      background-color: var(--color-dark-alt);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+    }
+    /* Growth Loop circles — del template metricas */
+    .loop-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .loop-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 40px;
+      border: 2px solid var(--color-dark);
+      font-size: var(--fs-h5);
+      font-weight: var(--fw-black);
+      color: var(--color-dark);
+      flex-shrink: 0;
+    }
+    .loop-circle--active {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="h2" style="margin-bottom: 8px;">Cards</h1>
+  <p class="text-body-md text-muted" style="margin-bottom: 48px;">
+    Border-radius 20px. Padding 30px. Shadow sm en reposo, md en hover.
+  </p>
+
+  <!-- CARD BÁSICA -->
+  <div class="ds-section">
+    <p class="ds-label">Card de información básica</p>
+    <div class="grid-3">
+
+      <div class="card">
+        <h4 class="card__title">Auditoría SEO Técnico</h4>
+        <p class="card__body">
+          Analizamos más de 200 factores técnicos de tu sitio: rastreabilidad, indexación, Core Web Vitals, estructura de URLs y más.
+        </p>
+        <a href="#" class="btn btn-ghost btn-sm" style="margin-top: 20px; padding-left: 0; text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 600; color: var(--color-primary);">
+          Conocer servicio →
+        </a>
+      </div>
+
+      <div class="card">
+        <h4 class="card__title">Link Building Estratégico</h4>
+        <p class="card__body">
+          Construcción de autoridad mediante backlinks de alta calidad en medios relevantes de tu industria, sin spam ni atajos.
+        </p>
+        <a href="#" class="btn btn-ghost btn-sm" style="margin-top: 20px; padding-left: 0; text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 600; color: var(--color-primary);">
+          Conocer servicio →
+        </a>
+      </div>
+
+      <div class="card">
+        <h4 class="card__title">SEO de Contenidos</h4>
+        <p class="card__body">
+          Estrategia de contenido basada en búsquedas de alta intención. Artículos que convierten tráfico orgánico en leads calificados.
+        </p>
+        <a href="#" class="btn btn-ghost btn-sm" style="margin-top: 20px; padding-left: 0; text-transform: none; letter-spacing: 0; font-size: 14px; font-weight: 600; color: var(--color-primary);">
+          Conocer servicio →
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CARD INTERACTIVA CON ICONO (del template servicios) -->
+  <div class="ds-section">
+    <p class="ds-label">Card interactiva con icon chip (hover lift)</p>
+    <div class="grid-3">
+
+      <a href="#" class="card card-interactive">
+        <div class="icon-chip">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h4 class="card__title">SEO Técnico</h4>
+        <p class="card__body">Optimización de la infraestructura de tu sitio para que Google y las IAs puedan rastrearlo e indexarlo perfectamente.</p>
+      </a>
+
+      <a href="#" class="card card-interactive">
+        <div class="icon-chip">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </div>
+        <h4 class="card__title">SEO de Contenidos</h4>
+        <p class="card__body">Creación de contenido que posiciona, educa y convierte. Estrategia basada en intención de búsqueda real.</p>
+      </a>
+
+      <a href="#" class="card card-interactive">
+        <div class="icon-chip">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
+          </svg>
+        </div>
+        <h4 class="card__title">Link Building</h4>
+        <p class="card__body">Autoridad real mediante enlaces de calidad. Sin PBNs, sin atajos, solo relaciones editoriales genuinas.</p>
+      </a>
+
+      <a href="#" class="card card-interactive">
+        <div class="icon-chip">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+          </svg>
+        </div>
+        <h4 class="card__title">SEO Internacional</h4>
+        <p class="card__body">Hreflang, estructura multi-idioma y posicionamiento en mercados de LATAM, España, USA y Canadá.</p>
+      </a>
+
+      <a href="#" class="card card-interactive">
+        <div class="icon-chip icon-chip--neutral">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h4 class="card__title">Diseño Web</h4>
+        <p class="card__body">Rediseño y desarrollo de sitios en Bricks Builder optimizados para conversión, velocidad y SEO desde el código.</p>
+      </a>
+
+      <a href="#" class="card card-interactive">
+        <div class="icon-chip icon-chip--neutral">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h4 class="card__title">Consultoría SEO</h4>
+        <p class="card__body">Diagnóstico estratégico y hoja de ruta personalizada. Para equipos internos que necesitan dirección experta.</p>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CARD STAT (del template metricas) -->
+  <div class="ds-section">
+    <p class="ds-label">Card de métricas / social proof</p>
+    <div class="grid-4">
+
+      <div class="card card-stat">
+        <div class="card-stat__value card-stat__value--primary">+320%</div>
+        <div class="card-stat__label">Tráfico orgánico promedio</div>
+      </div>
+
+      <div class="card card-stat">
+        <div class="card-stat__value">+150</div>
+        <div class="card-stat__label">Empresas en LATAM</div>
+      </div>
+
+      <div class="card card-stat">
+        <div class="card-stat__value card-stat__value--primary">8</div>
+        <div class="card-stat__label">Años de experiencia</div>
+      </div>
+
+      <div class="card card-stat">
+        <div class="card-stat__value">12</div>
+        <div class="card-stat__label">Países donde operamos</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CARD DARK (del template modulo-2) -->
+  <div class="ds-section">
+    <p class="ds-label">Card dark (secciones con fondo #0B1628)</p>
+    <div class="ds-dark-bg">
+      <div class="grid-3">
+
+        <div class="card card-dark">
+          <div class="icon-chip" style="background-color: rgba(255,45,70,0.15); margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#FF2D46" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h4 class="card__title" style="color: white;">Resultados medibles</h4>
+          <p class="card__body text-muted">Cada acción está respaldada por datos. Nada de vanity metrics: hablamos de tráfico calificado y conversiones.</p>
+        </div>
+
+        <div class="card card-dark">
+          <div class="icon-chip" style="background-color: rgba(255,45,70,0.15); margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#FF2D46" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h4 class="card__title" style="color: white;">Equipo especializado</h4>
+          <p class="card__body text-muted">No somos una agencia de todo. Somos especialistas en SEO, diseño web y pauta digital.</p>
+        </div>
+
+        <div class="card card-dark">
+          <div class="icon-chip" style="background-color: rgba(255,45,70,0.15); margin-bottom: 16px;">
+            <svg width="22" height="22" fill="none" stroke="#FF2D46" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
+          <h4 class="card__title" style="color: white;">Enfoque en LATAM</h4>
+          <p class="card__body text-muted">Entendemos los mercados de Colombia, México, Chile, Argentina, España y más de 8 países.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CASO DE ÉXITO (del template caso-de-exito) -->
+  <div class="ds-section">
+    <p class="ds-label">Card de caso de éxito</p>
+    <div class="grid-2">
+
+      <div class="card" style="display: flex; gap: 20px; padding: 24px;">
+        <div style="flex-shrink: 0; width: 60px; height: 60px; border-radius: var(--radius-md); background: var(--color-surface-soft); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <span class="text-caption text-muted">Logo</span>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span class="badge badge-primary">SEO</span>
+            <span class="badge badge-soft">Universidad</span>
+          </div>
+          <h4 class="card__title" style="font-size: 16px; margin-bottom: 6px;">+180% en captación de estudiantes</h4>
+          <p class="card__body">UTB aumentó sus solicitudes de información en 18 meses gracias a una estrategia de SEO para universidades.</p>
+          <a href="#" class="btn btn-ghost btn-sm" style="padding: 8px 0; text-transform: none; letter-spacing: 0; font-size: 13px; color: var(--color-primary); margin-top: 8px;">
+            Ver caso completo →
+          </a>
+        </div>
+      </div>
+
+      <div class="card" style="display: flex; gap: 20px; padding: 24px;">
+        <div style="flex-shrink: 0; width: 60px; height: 60px; border-radius: var(--radius-md); background: var(--color-surface-soft); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <span class="text-caption text-muted">Logo</span>
+        </div>
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span class="badge badge-primary">SEO Local</span>
+            <span class="badge badge-soft">Finanzas</span>
+          </div>
+          <h4 class="card__title" style="font-size: 16px; margin-bottom: 6px;">Recuperación de 240 fichas de GBP</h4>
+          <p class="card__body">Grupo Sura recuperó y optimizó sus perfiles de Google Business Profile en toda Colombia.</p>
+          <a href="#" class="btn btn-ghost btn-sm" style="padding: 8px 0; text-transform: none; letter-spacing: 0; font-size: 13px; color: var(--color-primary); margin-top: 8px;">
+            Ver caso completo →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GROWTH LOOP (del template metricas) -->
+  <div class="ds-section">
+    <p class="ds-label">The Growth Loop — Ciclo de proceso iterativo</p>
+    <div class="card" style="max-width: 700px;">
+      <h3 style="text-align: center; margin-bottom: 8px;">Ciclo de Mejora Continua</h3>
+      <p class="text-body-sm text-muted" style="text-align: center; margin-bottom: 32px;">
+        Un proceso iterativo basado en datos, no en intuición.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="loop-step">
+          <div class="loop-circle loop-circle--active">1</div>
+          <div>
+            <h5 style="margin-bottom: 4px;">Diagnóstico Profundo</h5>
+            <p class="text-body-sm text-muted">Auditoría técnica, análisis de competencia y mapeo de oportunidades.</p>
+          </div>
+        </div>
+        <div class="loop-step">
+          <div class="loop-circle">2</div>
+          <div>
+            <h5 style="margin-bottom: 4px;">Roadmap Estratégico</h5>
+            <p class="text-body-sm text-muted">Plan de acción priorizado por impacto y viabilidad.</p>
+          </div>
+        </div>
+        <div class="loop-step">
+          <div class="loop-circle">3</div>
+          <div>
+            <h5 style="margin-bottom: 4px;">Ejecución & Soporte</h5>
+            <p class="text-body-sm text-muted">Implementación con tu equipo o de forma autónoma según el proyecto.</p>
+          </div>
+        </div>
+        <div class="loop-step">
+          <div class="loop-circle">4</div>
+          <div>
+            <h5 style="margin-bottom: 4px;">Validación & QA</h5>
+            <p class="text-body-sm text-muted">Revisión de resultados, detección de errores y ajustes rápidos.</p>
+          </div>
+        </div>
+        <div class="loop-step">
+          <div class="loop-circle">5</div>
+          <div>
+            <h5 style="margin-bottom: 4px;">Escalamiento de Datos</h5>
+            <p class="text-body-sm text-muted">Lo que funciona se escala. Los datos guían el siguiente ciclo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

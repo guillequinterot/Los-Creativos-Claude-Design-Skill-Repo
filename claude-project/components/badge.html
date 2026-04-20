@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LC Design System — Badges</title>
+  <link rel="stylesheet" href="../ui-kit.css" />
+  <style>
+    body { padding: 40px; background: var(--color-bg); }
+    .ds-section { margin-bottom: 56px; }
+    .ds-label {
+      font-size: var(--fs-overline);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+    .ds-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="h2" style="margin-bottom: 8px;">Badges</h1>
+  <p class="text-body-md text-muted" style="margin-bottom: 48px;">
+    Border-radius full (pill). Font-size 12px bold. Usar para categorías, estados y etiquetas.
+  </p>
+
+  <!-- VARIANTES DE COLOR -->
+  <div class="ds-section">
+    <p class="ds-label">Variantes de color</p>
+    <div class="ds-row">
+      <span class="badge badge-primary">SEO</span>
+      <span class="badge badge-dark">Nuevo</span>
+      <span class="badge badge-soft">Caso de Éxito</span>
+      <span class="badge badge-success">Activo</span>
+      <span class="badge badge-warning">En progreso</span>
+      <span class="badge badge-error">Pausado</span>
+      <span class="badge badge-info">Actualizado</span>
+    </div>
+  </div>
+
+  <!-- CON PUNTO DE ESTADO -->
+  <div class="ds-section">
+    <p class="ds-label">Con dot de estado</p>
+    <div class="ds-row">
+      <span class="badge badge-success badge-dot">Publicado</span>
+      <span class="badge badge-warning badge-dot">Borrador</span>
+      <span class="badge badge-error badge-dot">Archivado</span>
+      <span class="badge badge-info badge-dot">En revisión</span>
+      <span class="badge badge-soft badge-dot">Sin estado</span>
+    </div>
+  </div>
+
+  <!-- CON ICONO -->
+  <div class="ds-section">
+    <p class="ds-label">Con icono prefijo</p>
+    <div class="ds-row">
+      <span class="badge badge-primary">
+        <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+        SEO Técnico
+      </span>
+      <span class="badge badge-dark">
+        <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Verificado
+      </span>
+      <span class="badge badge-success">
+        <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        Completado
+      </span>
+      <span class="badge badge-info">
+        <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+        </svg>
+        Novedad
+      </span>
+      <span class="badge badge-warning">
+        <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        Atención
+      </span>
+    </div>
+  </div>
+
+  <!-- CATEGORÍAS / INDUSTRIAS (uso en sitio real) -->
+  <div class="ds-section">
+    <p class="ds-label">Categorías y servicios (uso en cards y posts)</p>
+    <div class="ds-row">
+      <span class="badge badge-primary">SEO</span>
+      <span class="badge badge-soft">Diseño Web</span>
+      <span class="badge badge-soft">Google Ads</span>
+      <span class="badge badge-soft">CRO</span>
+      <span class="badge badge-soft">Link Building</span>
+      <span class="badge badge-soft">SEO Técnico</span>
+      <span class="badge badge-soft">Contenidos</span>
+      <span class="badge badge-soft">SEO Local</span>
+      <span class="badge badge-soft">GEO</span>
+      <span class="badge badge-soft">LLMO</span>
+    </div>
+    <div class="ds-row" style="margin-top: 8px;">
+      <span class="badge badge-dark">Universidad</span>
+      <span class="badge badge-dark">Ecommerce</span>
+      <span class="badge badge-dark">B2B</span>
+      <span class="badge badge-dark">Inmobiliaria</span>
+      <span class="badge badge-dark">Clínica</span>
+      <span class="badge badge-dark">Hotel</span>
+      <span class="badge badge-dark">Fintech</span>
+      <span class="badge badge-dark">SaaS</span>
+    </div>
+  </div>
+
+  <!-- BADGES EN CONTEXTO (dentro de cards) -->
+  <div class="ds-section">
+    <p class="ds-label">En contexto — Cards de casos de éxito</p>
+    <div style="display: flex; flex-direction: column; gap: 16px; max-width: 560px;">
+
+      <div class="card" style="padding: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <div style="display: flex; gap: 8px;">
+            <span class="badge badge-primary">SEO</span>
+            <span class="badge badge-soft">Universidad</span>
+          </div>
+          <span class="badge badge-success badge-dot">Activo</span>
+        </div>
+        <h4 class="card__title" style="font-size: 16px; margin-bottom: 6px;">
+          UTB — Captación de estudiantes +180%
+        </h4>
+        <p class="card__body">Colombia · 18 meses de proyecto</p>
+      </div>
+
+      <div class="card" style="padding: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <div style="display: flex; gap: 8px;">
+            <span class="badge badge-primary">SEO Local</span>
+            <span class="badge badge-soft">Finanzas</span>
+          </div>
+          <span class="badge badge-success badge-dot">Completado</span>
+        </div>
+        <h4 class="card__title" style="font-size: 16px; margin-bottom: 6px;">
+          Grupo Sura — 240 fichas GBP recuperadas
+        </h4>
+        <p class="card__body">Colombia · 6 meses de proyecto</p>
+      </div>
+
+      <div class="card" style="padding: 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <div style="display: flex; gap: 8px;">
+            <span class="badge badge-primary">SEO</span>
+            <span class="badge badge-soft">Ecommerce</span>
+          </div>
+          <span class="badge badge-warning badge-dot">En curso</span>
+        </div>
+        <h4 class="card__title" style="font-size: 16px; margin-bottom: 6px;">
+          Smart Cookies — +210% tráfico orgánico
+        </h4>
+        <p class="card__body">España · 12 meses de proyecto</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NUEVA PUBLICACIÓN (badge sobre imagen) -->
+  <div class="ds-section">
+    <p class="ds-label">Badge sobre imagen / hero</p>
+    <div style="max-width: 400px;">
+      <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(135deg, #0F172A 0%, #0B1628 100%); height: 200px; display: flex; align-items: center; justify-content: center;">
+        <span style="color: rgba(255,255,255,0.2); font-size: 60px; font-weight: 900;">LC</span>
+        <!-- Badge posicionado -->
+        <div style="position: absolute; top: 16px; left: 16px; display: flex; gap: 8px;">
+          <span class="badge badge-primary">Nuevo</span>
+          <span class="badge" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.2);">2026</span>
+        </div>
+        <div style="position: absolute; bottom: 16px; left: 16px;">
+          <h4 style="color: white; font-size: 16px; margin-bottom: 4px;">Guía GEO 2026</h4>
+          <span class="badge badge-soft" style="background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border-color: transparent;">Descarga gratuita</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LC Design System — Navigation</title>
+  <link rel="stylesheet" href="../ui-kit.css" />
+  <style>
+    /* Preview scaffolding */
+    .preview-area {
+      min-height: 100vh;
+      background: var(--color-bg);
+      padding-top: 68px; /* Compensar nav sticky */
+    }
+    .preview-content {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+    .ds-label {
+      font-size: var(--fs-overline);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+
+    /* ============================================
+       NAV MEGAMENU — ajustado desde Bricks header
+       ============================================ */
+    .nav__mega {
+      position: static;
+    }
+    .nav__mega > .nav__link {
+      gap: 4px;
+    }
+    .nav__mega > .nav__link svg {
+      transition: transform var(--motion-base);
+      flex-shrink: 0;
+    }
+    .nav__mega:hover > .nav__link svg {
+      transform: rotate(180deg);
+    }
+
+    .megamenu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      right: 0;
+      background: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: var(--shadow-lg);
+      z-index: 200;
+      padding: 32px 0;
+    }
+    .nav__mega:hover .megamenu,
+    .nav__mega:focus-within .megamenu {
+      display: block;
+    }
+    .megamenu__inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .megamenu__group-title {
+      font-size: var(--fs-overline);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .megamenu__links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      list-style: none;
+    }
+    .megamenu__links a {
+      display: block;
+      padding: 6px 10px;
+      font-size: var(--fs-body-sm);
+      font-weight: var(--fw-medium);
+      color: var(--color-text);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background-color var(--motion-fast), color var(--motion-fast);
+    }
+    .megamenu__links a:hover {
+      background: var(--color-accent-bg);
+      color: var(--color-primary);
+    }
+    .megamenu__links a strong {
+      display: block;
+      font-weight: var(--fw-bold);
+      font-size: var(--fs-body-sm);
+    }
+    .megamenu__links a span {
+      display: block;
+      font-size: var(--fs-caption);
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       NAV PRINCIPAL (Bricks-aligned)
+       ============================== -->
+  <header class="nav">
+    <div class="nav__inner" style="position: relative;">
+
+      <!-- LOGO -->
+      <a href="https://loscreativos.co" class="nav__brand" aria-label="Los Creativos — Inicio">
+        <img
+          src="https://loscreativos.co/wp-content/uploads/2026/01/Logo-MKT-Principal.svg"
+          alt="Los Creativos"
+          height="32"
+          width="auto"
+          onerror="this.onerror=null; this.src='../../SVG/Logo-MKT-Principal.svg';"
+        />
+      </a>
+
+      <!-- NAVIGATION LINKS (desktop) -->
+      <ul class="nav__links" id="nav-links">
+
+        <!-- SEO (megamenu) -->
+        <li class="nav__mega">
+          <a href="/seo" class="nav__link">
+            SEO
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <div class="megamenu">
+            <div class="megamenu__inner">
+              <div>
+                <p class="megamenu__group-title">Servicios SEO</p>
+                <ul class="megamenu__links">
+                  <li><a href="/tecnico"><strong>SEO Técnico</strong><span>Rastreabilidad, Core Web Vitals, indexación</span></a></li>
+                  <li><a href="/contenidos"><strong>SEO de Contenidos</strong><span>Contenido que posiciona y convierte</span></a></li>
+                  <li><a href="/linkbuilding"><strong>Link Building</strong><span>Autoridad mediante backlinks de calidad</span></a></li>
+                  <li><a href="/auditoria"><strong>Auditoría SEO</strong><span>Diagnóstico de 200+ factores</span></a></li>
+                  <li><a href="/local"><strong>SEO Local</strong><span>Google Business Profile y búsquedas locales</span></a></li>
+                  <li><a href="/internacional"><strong>SEO Internacional</strong><span>Hreflang, LATAM, España y más</span></a></li>
+                </ul>
+              </div>
+              <div>
+                <p class="megamenu__group-title">SEO para IA</p>
+                <ul class="megamenu__links">
+                  <li><a href="/geo"><strong>GEO</strong><span>Generative Engine Optimization</span></a></li>
+                  <li><a href="/llmo"><strong>LLMO</strong><span>LLM Optimization</span></a></li>
+                  <li><a href="/chatgpt"><strong>SEO para ChatGPT</strong></a></li>
+                  <li><a href="/gemini"><strong>SEO para Gemini</strong></a></li>
+                  <li><a href="/perplexity"><strong>SEO para Perplexity</strong></a></li>
+                  <li><a href="/ai-overviews"><strong>SEO para AI Overviews</strong></a></li>
+                </ul>
+              </div>
+              <div>
+                <p class="megamenu__group-title">Industrias</p>
+                <ul class="megamenu__links">
+                  <li><a href="/universidades">SEO para Universidades</a></li>
+                  <li><a href="/ecommerce">SEO para Ecommerce</a></li>
+                  <li><a href="/b2b">SEO para B2B</a></li>
+                  <li><a href="/inmobiliarias">SEO para Inmobiliarias</a></li>
+                  <li><a href="/clinicas">SEO para Clínicas</a></li>
+                  <li><a href="/hoteles">SEO para Hoteles</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- DISEÑO WEB -->
+        <li class="nav__mega">
+          <a href="/diseno-web" class="nav__link">
+            Diseño Web
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <div class="megamenu">
+            <div class="megamenu__inner" style="grid-template-columns: repeat(2, 1fr);">
+              <div>
+                <p class="megamenu__group-title">Servicios</p>
+                <ul class="megamenu__links">
+                  <li><a href="/rediseno"><strong>Rediseño Web</strong><span>Sitios optimizados para conversión y SEO</span></a></li>
+                  <li><a href="/cro"><strong>CRO</strong><span>Optimización de tasa de conversión</span></a></li>
+                  <li><a href="/diseno-web">Diseño web en Colombia</a></li>
+                </ul>
+              </div>
+              <div>
+                <p class="megamenu__group-title">Por ciudad</p>
+                <ul class="megamenu__links">
+                  <li><a href="/bogota">Diseño web en Bogotá</a></li>
+                  <li><a href="/medellin">Diseño web en Medellín</a></li>
+                  <li><a href="/cali">Diseño web en Cali</a></li>
+                  <li><a href="/barranquilla">Diseño web en Barranquilla</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- PAUTA -->
+        <li>
+          <a href="/pauta" class="nav__link">Pauta Digital</a>
+        </li>
+
+        <!-- CASOS -->
+        <li>
+          <a href="/casos-de-exito2" class="nav__link">Casos de Éxito</a>
+        </li>
+
+        <!-- NOSOTROS -->
+        <li>
+          <a href="/nosotros" class="nav__link">Nosotros</a>
+        </li>
+
+        <!-- BLOG -->
+        <li>
+          <a href="/recursos" class="nav__link">Blog</a>
+        </li>
+
+      </ul>
+
+      <!-- ACCIONES -->
+      <div class="nav__actions">
+        <a href="/contacto" class="btn btn-primary btn-sm">Contacto</a>
+        <!-- Hamburger (mobile) -->
+        <button class="nav__toggle" id="nav-toggle" aria-label="Menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- PREVIEW CONTENT -->
+  <div class="preview-area">
+    <div class="preview-content">
+
+      <p class="ds-label">Descripción del componente</p>
+
+      <div class="card" style="max-width: 700px;">
+        <h3 style="margin-bottom: 16px;">Nav Header — Especificaciones Bricks</h3>
+        <table style="border-collapse: collapse; font-size: 13px; width: 100%;">
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: 8px 12px; font-weight: 600; color: var(--color-text-muted); width: 160px;">Position</td>
+            <td style="padding: 8px 12px;">sticky / top: 0 / z-index: 100</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: 8px 12px; font-weight: 600; color: var(--color-text-muted);">Background</td>
+            <td style="padding: 8px 12px;">#FFFFFF (blanco) + border-bottom #E0E0E0</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: 8px 12px; font-weight: 600; color: var(--color-text-muted);">Height</td>
+            <td style="padding: 8px 12px;">68px</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: 8px 12px; font-weight: 600; color: var(--color-text-muted);">Padding</td>
+            <td style="padding: 8px 12px;">left/right: 40px desktop, 20px mobile</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: 8px 12px; font-weight: 600; color: var(--color-text-muted);">Nav links</td>
+            <td style="padding: 8px 12px;">16px / font-weight 700 / color #1E2939</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: 8px 12px; font-weight: 600; color: var(--color-text-muted);">Botón CTA</td>
+            <td style="padding: 8px 12px;">.btn-primary .btn-sm / border-radius: 20px</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--color-border);">
+            <td style="padding: 8px 12px; font-weight: 600; color: var(--color-text-muted);">Logo URL</td>
+            <td style="padding: 8px 12px; font-size: 12px;">loscreativos.co/wp-content/uploads/2026/01/Logo-MKT-Principal.svg</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 12px; font-weight: 600; color: var(--color-text-muted);">Megamenu</td>
+            <td style="padding: 8px 12px;">3 columnas: SEO / Diseño Web / Pauta Digital</td>
+          </tr>
+        </table>
+      </div>
+
+      <p class="ds-label" style="margin-top: 40px;">Jerarquía de páginas (88 páginas en WP)</p>
+      <div class="card" style="max-width: 700px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; font-size: 13px;">
+          <div>
+            <p style="font-weight: 700; margin-bottom: 8px; color: var(--color-primary);">SEO (/seo)</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 4px; color: var(--color-text-muted);">
+              <li>→ Técnico</li><li>→ Contenidos</li><li>→ Link Building</li>
+              <li>→ Auditoría</li><li>→ Local</li><li>→ Internacional</li>
+              <li>→ GEO / LLMO / AEO</li><li>→ ChatGPT / Gemini</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-weight: 700; margin-bottom: 8px; color: var(--color-primary);">Diseño (/diseno-web)</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 4px; color: var(--color-text-muted);">
+              <li>→ Rediseño</li><li>→ CRO</li>
+              <li>→ Bogotá</li><li>→ Medellín</li>
+              <li>→ Cali</li><li>→ Barranquilla</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-weight: 700; margin-bottom: 8px; color: var(--color-primary);">Top nivel</p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 4px; color: var(--color-text-muted);">
+              <li>→ /inicio</li><li>→ /nosotros</li>
+              <li>→ /casos-de-exito2</li><li>→ /contacto</li>
+              <li>→ /pauta</li><li>→ /marketing-digital</li>
+              <li>→ /recursos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      // Animar hamburger → X
+      const spans = toggle.querySelectorAll('span');
+      if (isOpen) {
+        spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+      } else {
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+      }
+    });
+  </script>
+
+</body>
+</html>

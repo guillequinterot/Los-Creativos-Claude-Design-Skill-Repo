@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LC Design System — Footer</title>
+  <link rel="stylesheet" href="../ui-kit.css" />
+  <style>
+    .preview-spacer {
+      background: var(--color-bg);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .ds-label {
+      display: inline-block;
+      font-size: var(--fs-overline);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body style="margin: 0; background: var(--color-bg);">
+
+  <!-- SPACER (simula contenido de página) -->
+  <div class="preview-spacer">
+    <span class="ds-label">Contenido de página (scroll hacia abajo para ver el footer)</span>
+    <h2 style="margin-top: 8px; margin-bottom: 16px;">Footer — Canónico (claro)</h2>
+    <p class="text-body-md text-muted">Confirmado en Bricks template-footer-2026-04-20.json</p>
+    <div style="margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="#footer-light" class="btn btn-primary btn-md">Ver Footer Claro ↓</a>
+      <a href="#footer-dark" class="btn btn-secondary btn-md">Ver Footer Oscuro (variante) ↓</a>
+    </div>
+  </div>
+
+  <!-- ==============================
+       FOOTER CLARO (CANÓNICO)
+       Estructura fiel a Bricks template
+       ============================== -->
+  <footer class="footer" id="footer-light">
+    <div class="footer__grid">
+
+      <!-- Columna 1: Marca (38% en Bricks) -->
+      <div>
+        <a href="https://loscreativos.co" aria-label="Los Creativos">
+          <img
+            class="footer__logo"
+            src="https://loscreativos.co/wp-content/uploads/2026/01/Logo-MKT-Principal.svg"
+            alt="Los Creativos"
+            onerror="this.onerror=null; this.src='../../SVG/Logo-MKT-Principal.svg';"
+          />
+        </a>
+        <p class="footer__tagline">
+          Agencia de marketing digital de resultados. SEO, Diseño Web y Pauta Digital para empresas en LATAM y España.
+        </p>
+        <!-- Redes sociales (de Bricks: LinkedIn, Instagram, Twitter, Facebook) -->
+        <ul class="footer__social" aria-label="Redes sociales">
+          <li>
+            <a href="https://linkedin.com/company/loscreativos" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/loscreativos.co" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/loscreativos" target="_blank" rel="noopener" aria-label="X (Twitter)">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/loscreativos.co" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 2: Compañía (12% en Bricks) -->
+      <div>
+        <h3 class="footer__col-title">Compañía</h3>
+        <ul class="footer__links">
+          <li><a href="/nosotros">Sobre Nosotros</a></li>
+          <li><a href="/casos-de-exito2">Casos de Éxito</a></li>
+          <li><a href="/recursos">Blog</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/agradecimiento-asesoria">Agendar Asesoría</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Servicios SEO (18% en Bricks) -->
+      <div>
+        <h3 class="footer__col-title">Servicios SEO</h3>
+        <ul class="footer__links">
+          <li><a href="/tecnico">SEO Técnico</a></li>
+          <li><a href="/contenidos">SEO de Contenidos</a></li>
+          <li><a href="/linkbuilding">Link Building</a></li>
+          <li><a href="/auditoria">Auditoría SEO</a></li>
+          <li><a href="/local">SEO Local</a></li>
+          <li><a href="/geo">GEO</a></li>
+          <li><a href="/llmo">LLMO</a></li>
+          <li><a href="/consultoria">Consultoría SEO</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Posicionamiento por ciudad (22% en Bricks) -->
+      <div>
+        <h3 class="footer__col-title">Posicionamiento SEO</h3>
+        <ul class="footer__links">
+          <li><a href="/agencia-seo-bogota">SEO en Bogotá</a></li>
+          <li><a href="/agencia-seo-medellin">SEO en Medellín</a></li>
+          <li><a href="/agencia-seo-cali">SEO en Cali</a></li>
+          <li><a href="/agencia-seo-barranquilla">SEO en Barranquilla</a></li>
+          <li><a href="/agencia-seo-bucaramanga">SEO en Bucaramanga</a></li>
+          <li><a href="/agencia-seo-cartagena">SEO en Cartagena</a></li>
+          <li><a href="/seo">Agencia SEO Colombia</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 5: Diseño web (20% en Bricks) -->
+      <div>
+        <h3 class="footer__col-title">Diseño Web</h3>
+        <ul class="footer__links">
+          <li><a href="/diseno-web">Rediseño Web</a></li>
+          <li><a href="/bogota">Diseño web en Bogotá</a></li>
+          <li><a href="/medellin">Diseño web en Medellín</a></li>
+          <li><a href="/cali">Diseño web en Cali</a></li>
+          <li><a href="/barranquilla">Diseño web en Barranquilla</a></li>
+          <li><a href="/cro">CRO</a></li>
+          <li><a href="/rediseno">Rediseño</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Los Creativos. Todos los derechos reservados.</p>
+      <ul class="footer__legal">
+        <li><a href="/politica-de-privacidad-y-tratamiento-de-datos-personales">Política de Privacidad</a></li>
+        <li><a href="/terminos-y-condiciones-de-uso">Términos y Condiciones</a></li>
+        <li><a href="/habeas-data">Habeas Data</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ESPACIADOR ENTRE VARIANTES -->
+  <div class="preview-spacer" style="padding: 40px 24px;">
+    <span class="ds-label">Variante oscura (alternativa — no canónica)</span>
+  </div>
+
+  <!-- ==============================
+       FOOTER OSCURO (VARIANTE)
+       Para páginas con sección final oscura
+       ============================== -->
+  <footer class="footer footer--dark" id="footer-dark">
+    <div class="footer__grid">
+
+      <div>
+        <a href="https://loscreativos.co">
+          <img
+            class="footer__logo"
+            src="https://loscreativos.co/wp-content/uploads/2026/01/Logo-MKT-Principal.svg"
+            alt="Los Creativos"
+            style="filter: brightness(0) invert(1);"
+            onerror="this.onerror=null; this.src='../../SVG/Logo-MKT-Blanco.svg';"
+          />
+        </a>
+        <p class="footer__tagline">
+          Agencia de marketing digital de resultados. SEO, Diseño Web y Pauta Digital para empresas en LATAM y España.
+        </p>
+        <ul class="footer__social" aria-label="Redes sociales">
+          <li>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="X">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__col-title">Compañía</h3>
+        <ul class="footer__links">
+          <li><a href="/nosotros">Sobre Nosotros</a></li>
+          <li><a href="/casos-de-exito2">Casos de Éxito</a></li>
+          <li><a href="/recursos">Blog</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__col-title">Servicios SEO</h3>
+        <ul class="footer__links">
+          <li><a href="/tecnico">SEO Técnico</a></li>
+          <li><a href="/contenidos">SEO de Contenidos</a></li>
+          <li><a href="/linkbuilding">Link Building</a></li>
+          <li><a href="/auditoria">Auditoría SEO</a></li>
+          <li><a href="/geo">GEO</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__col-title">Colombia</h3>
+        <ul class="footer__links">
+          <li><a href="/agencia-seo-bogota">SEO en Bogotá</a></li>
+          <li><a href="/agencia-seo-medellin">SEO en Medellín</a></li>
+          <li><a href="/agencia-seo-cali">SEO en Cali</a></li>
+          <li><a href="/agencia-seo-barranquilla">SEO en Barranquilla</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__col-title">Diseño Web</h3>
+        <ul class="footer__links">
+          <li><a href="/diseno-web">Rediseño Web</a></li>
+          <li><a href="/cro">CRO</a></li>
+          <li><a href="/bogota">Bogotá</a></li>
+          <li><a href="/medellin">Medellín</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Los Creativos. Todos los derechos reservados.</p>
+      <ul class="footer__legal">
+        <li><a href="/politica-de-privacidad-y-tratamiento-de-datos-personales">Política de Privacidad</a></li>
+        <li><a href="/terminos-y-condiciones-de-uso">Términos y Condiciones</a></li>
+        <li><a href="/habeas-data">Habeas Data</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

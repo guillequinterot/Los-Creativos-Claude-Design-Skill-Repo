@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LC Design System — Buttons</title>
+  <link rel="stylesheet" href="../ui-kit.css" />
+  <style>
+    body { padding: 40px; background: var(--color-bg); }
+    .ds-section { margin-bottom: 56px; }
+    .ds-label {
+      font-size: var(--fs-overline);
+      font-weight: var(--fw-medium);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+    .ds-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .ds-dark-bg {
+      background-color: var(--color-dark-alt);
+      padding: 24px;
+      border-radius: var(--radius-lg);
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="h2" style="margin-bottom: 8px;">Buttons</h1>
+  <p class="text-body-md text-muted" style="margin-bottom: 48px;">
+    Usa siempre <code>.btn</code> + una variante + un tamaño. Uppercase, letra tracking wide, border-radius 20px.
+  </p>
+
+  <!-- VARIANTES -->
+  <div class="ds-section">
+    <p class="ds-label">Variantes · Tamaño Medium</p>
+    <div class="ds-row">
+      <button class="btn btn-primary btn-md">Solicitar Consultoría</button>
+      <button class="btn btn-secondary btn-md">Ver Casos de Éxito</button>
+      <button class="btn btn-outline btn-md">Saber Más</button>
+      <button class="btn btn-ghost btn-md">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- TAMAÑOS -->
+  <div class="ds-section">
+    <p class="ds-label">Tamaños — Primary</p>
+    <div class="ds-row" style="align-items: flex-end;">
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary btn-md">Medium</button>
+      <button class="btn btn-primary btn-lg">Large CTA</button>
+    </div>
+    <p class="ds-label" style="margin-top: 24px;">Tamaños — Outline</p>
+    <div class="ds-row" style="align-items: flex-end;">
+      <button class="btn btn-outline btn-sm">Small</button>
+      <button class="btn btn-outline btn-md">Medium</button>
+      <button class="btn btn-outline btn-lg">Large</button>
+    </div>
+  </div>
+
+  <!-- CON ICONO -->
+  <div class="ds-section">
+    <p class="ds-label">Con icono (left / right / icon-only)</p>
+    <div class="ds-row">
+      <!-- Icono izquierda -->
+      <button class="btn btn-primary btn-md">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .82h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16"/>
+        </svg>
+        Llamar Ahora
+      </button>
+      <!-- Icono derecha -->
+      <button class="btn btn-secondary btn-md">
+        Ver Casos
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+      <!-- Outline con icono -->
+      <button class="btn btn-outline btn-md">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        Descargar
+      </button>
+      <!-- Icon-only -->
+      <button class="btn btn-primary btn-icon btn-md" aria-label="Buscar">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+      <button class="btn btn-outline btn-icon btn-md" aria-label="Compartir">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+          <path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ESTADOS -->
+  <div class="ds-section">
+    <p class="ds-label">Estados</p>
+    <div class="ds-row">
+      <button class="btn btn-primary btn-md">Default</button>
+      <button class="btn btn-primary btn-md" disabled>Disabled</button>
+      <button class="btn btn-primary btn-md btn-loading">Procesando</button>
+      <button class="btn btn-secondary btn-md" disabled>Disabled</button>
+      <button class="btn btn-outline btn-md" disabled>Disabled</button>
+    </div>
+  </div>
+
+  <!-- SOBRE FONDO OSCURO -->
+  <div class="ds-section">
+    <p class="ds-label">Sobre fondo oscuro (secciones hero / dark)</p>
+    <div class="ds-dark-bg">
+      <div class="ds-row">
+        <button class="btn btn-primary btn-lg">Solicitar Consultoría</button>
+        <button class="btn btn-outline btn-lg" style="color: white; border-color: rgba(255,255,255,0.35);">
+          Ver Casos de Éxito
+        </button>
+        <button class="btn btn-ghost btn-md" style="color: rgba(255,255,255,0.7);">
+          Saber más →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL WIDTH -->
+  <div class="ds-section" style="max-width: 480px;">
+    <p class="ds-label">Full width (formularios, mobile CTAs)</p>
+    <button class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 12px;">
+      SOLICITAR CONSULTORÍA GRATUITA
+    </button>
+    <button class="btn btn-outline btn-md" style="width: 100%;">
+      Ver más información
+    </button>
+  </div>
+
+  <!-- REFERENCIA DE TOKENS -->
+  <div class="ds-section">
+    <p class="ds-label">Referencia de tokens</p>
+    <table style="border-collapse: collapse; font-size: 13px; width: 100%;">
+      <thead>
+        <tr style="border-bottom: 1px solid var(--color-border);">
+          <th style="text-align: left; padding: 8px 12px; color: var(--color-text-muted);">Variante</th>
+          <th style="text-align: left; padding: 8px 12px; color: var(--color-text-muted);">Background</th>
+          <th style="text-align: left; padding: 8px 12px; color: var(--color-text-muted);">Texto</th>
+          <th style="text-align: left; padding: 8px 12px; color: var(--color-text-muted);">Radius</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid var(--color-border);">
+          <td style="padding: 8px 12px; font-weight: 600;">.btn-primary</td>
+          <td style="padding: 8px 12px;">#FF2D46</td>
+          <td style="padding: 8px 12px;">#FFFFFF</td>
+          <td style="padding: 8px 12px;">20px</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--color-border);">
+          <td style="padding: 8px 12px; font-weight: 600;">.btn-secondary</td>
+          <td style="padding: 8px 12px;">#0F172A</td>
+          <td style="padding: 8px 12px;">#FFFFFF</td>
+          <td style="padding: 8px 12px;">20px</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--color-border);">
+          <td style="padding: 8px 12px; font-weight: 600;">.btn-outline</td>
+          <td style="padding: 8px 12px;">transparent</td>
+          <td style="padding: 8px 12px;">#0F172A</td>
+          <td style="padding: 8px 12px;">20px / border #E0E0E0</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 12px; font-weight: 600;">.btn-ghost</td>
+          <td style="padding: 8px 12px;">transparent</td>
+          <td style="padding: 8px 12px;">#1E2939</td>
+          <td style="padding: 8px 12px;">20px</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
